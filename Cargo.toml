@@ -1,0 +1,15 @@
+[package]
+name = "playground"
+version = "4.2.0"
+edition = "2021"
+authors = ["Ossian Mapes <self@ossian.dev>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ic-kit = {path = "./ic-kit/ic-kit"}
+futures = "0.3"
+
+[lib]
+crate-type = ["cdylib"]
+path = "src/lib.rs"
