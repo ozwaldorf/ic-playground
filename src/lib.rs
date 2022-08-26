@@ -39,11 +39,11 @@ pub fn get_counter(counter: &Counter) -> u64 {
 pub struct PlaygroundCanister;
 
 #[cfg(test)]
-mod tests {
+mod counter_tests {
     use super::*;
 
     #[kit_test]
-    async fn test_increment(replica: Replica) {
+    async fn increment(replica: Replica) {
         let c = replica.add_canister(PlaygroundCanister::anonymous());
 
         let r = c
@@ -84,7 +84,7 @@ mod tests {
     }
 
     #[kit_test]
-    async fn test_increment_by(replica: Replica) {
+    async fn increment_by(replica: Replica) {
         let c = replica.add_canister(PlaygroundCanister::anonymous());
         assert_eq!(
             c.new_call("increment_by")
